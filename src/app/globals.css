@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: #f4f2ed;
+  color: #1b1815;
+}
+
+::selection {
+  background-color: #b0502f;
+  color: #f4f2ed;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: #1b1815;
+  color: #f4f2ed;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* El popup nativo del <select> no hereda el fondo oscuro del formulario:
+   sin esto, el navegador pinta las opciones con texto claro sobre fondo
+   claro y solo se leen al pasar el ratón. */
+select.dark-select {
+  color-scheme: dark;
+}
+
+select.dark-select option {
+  background-color: #1b1815;
+  color: #f4f2ed;
+}
