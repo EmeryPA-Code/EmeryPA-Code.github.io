@@ -104,6 +104,7 @@ export const site = {
       },
     ],
     closing: 'Si tu proyecto necesita hablar los dos idiomas a la vez, probablemente sea buen momento para escribirme.',
+    cta: { label: 'Hablemos', href: '#contacto' },
   },
 
   trajectory: {
@@ -159,6 +160,7 @@ export const site = {
           'Tienda online de calcetines de marca propia: marketing digital, redes, marketplaces, SEO y diseño de e-commerce en Shopify, con gestión directa de presupuesto y proveedores.',
       },
     ],
+    cta: { label: 'Hablemos de tu proyecto', href: '#contacto' },
   },
 
   about: {
@@ -172,6 +174,7 @@ export const site = {
     ],
     highlight:
       'Entiendo el marketing como motor de negocio, no como una lista de tareas — y ahora tengo el código para construirlo yo mismo.',
+    cta: { label: 'Hablemos', href: '#contacto' },
   },
 
   projects: {
@@ -216,6 +219,7 @@ export const site = {
         role: 'Fundador',
       },
     ],
+    cta: { label: '¿Tienes un proyecto en mente? Hablemos', href: '#contacto' },
   },
 
   education: {
@@ -246,6 +250,7 @@ export const site = {
       'Digital Marketing Workshop — Activate Your Business by Google & BBVA',
     ],
     languages: ['Español (nativo)', 'Inglés (C1)', 'Francés (A1)', 'Italiano (A1)'],
+    cta: { label: 'Hablemos', href: '#contacto' },
   },
 
   finalCta: {

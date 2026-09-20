@@ -53,6 +53,17 @@ export default function Trajectory() {
             </Reveal>
           ))}
         </ol>
+
+        <Reveal delay={trajectory.timeline.length * 70 + 60}>
+          <div className="mt-12 md:mt-16 flex justify-center">
+            <a
+              href={trajectory.cta.href}
+              className="inline-flex items-center border border-ink text-ink text-sm px-6 py-3 hover:border-accent hover:text-accent transition-colors"
+            >
+              {trajectory.cta.label}
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

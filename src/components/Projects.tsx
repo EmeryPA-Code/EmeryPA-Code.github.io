@@ -70,6 +70,17 @@ export default function Projects() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={projects.items.length * 90 + 60}>
+          <div className="mt-12 md:mt-16 flex justify-center">
+            <a
+              href={projects.cta.href}
+              className="inline-flex items-center border border-ink text-ink text-sm px-6 py-3 hover:border-accent hover:text-accent transition-colors"
+            >
+              {projects.cta.label}
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

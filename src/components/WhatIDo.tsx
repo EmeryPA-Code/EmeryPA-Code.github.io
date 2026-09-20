@@ -60,6 +60,14 @@ export default function WhatIDo() {
           <p className="mt-12 md:mt-16 text-lg md:text-xl font-serif italic text-ink text-center max-w-2xl mx-auto">
             {whatIDo.closing}
           </p>
+          <div className="mt-8 flex justify-center">
+            <a
+              href={whatIDo.cta.href}
+              className="inline-flex items-center bg-ink text-bg text-sm px-6 py-3 hover:bg-accent transition-colors"
+            >
+              {whatIDo.cta.label}
+            </a>
+          </div>
         </Reveal>
       </div>
     </section>
