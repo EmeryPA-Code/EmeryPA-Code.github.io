@@ -19,7 +19,7 @@ export default function CaseStudies() {
           />
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {cases.items.map((item, i) => (
             <Reveal key={item.name} delay={i * 100} className="h-full">
               <div className="h-full rounded-2xl border border-[#2A2A2E] bg-[#141416] p-6 md:p-7 flex flex-col hover:border-[#A6FF4D]/40 transition-colors">

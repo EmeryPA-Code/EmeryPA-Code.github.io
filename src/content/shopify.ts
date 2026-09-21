@@ -169,7 +169,8 @@ export const shopify = {
         challenge: 'Lanzar de cero una marca de calcetines sin presupuesto de agencia ni equipo técnico.',
         action:
           'Diseñé y desarrollé la tienda en Shopify, monté el catálogo, el SEO on-page y la presencia en marketplaces adicionales (Amazon, Zatro).',
-        result: '[PLACEHOLDER — cifra real: ventas, tráfico orgánico o pedidos conseguidos]',
+        result:
+          'Llegué a vender alrededor de 10.000 € con apenas presupuesto y construí una imagen de marca que en 2016 era muy adelantada a su época (hoy está de moda). Acabé cerrándola: toda la inversión era personal y no llegué a los resultados que esperaba.',
       },
       {
         name: 'Piscinas Toi',
@@ -177,7 +178,16 @@ export const shopify = {
         challenge: 'Tienda de piscinas desmontables con mucha estacionalidad y necesidad de subir el ticket medio.',
         action:
           'Gestiono el e-commerce completo: fichas de producto, email marketing, packaging y campañas de meta ads alineadas con la temporada.',
-        result: '[PLACEHOLDER — cifra real: crecimiento de ventas o de ticket medio]',
+        result: 'Incremento de la facturación de un 10%.',
+      },
+      {
+        name: 'Hawkers',
+        logo: '/images/logos/hawkers.png',
+        challenge:
+          'Escalar las ventas en más de una decena de marketplaces internacionales (Amazon, Mercado Libre, Zalando, La Redoute...) sin perder margen ni control de stock.',
+        action:
+          'Gestioné yo solo las cuentas, campañas de venta y promociones de todos los marketplaces, con picos de máxima exigencia en fechas clave como el Black Friday.',
+        result: 'Más de 1.000.000 € vendidos yo solo en fechas como Black Friday.',
       },
       {
         name: 'Acuatoi',
@@ -185,7 +195,7 @@ export const shopify = {
         challenge: 'Montar una tienda de merch y lifestyle desde cero junto a mi hermano, sin experiencia previa del equipo.',
         action:
           'Desarrollo y diseño de la tienda Shopify, estrategia de marca y estructura de catálogo pensada para crecer por categorías.',
-        result: '[PLACEHOLDER — cifra real: pedidos, tráfico o facturación]',
+        result: 'Lleva 3 meses online con inversión propia: ya está facturando y sigue en marcha.',
       },
     ],
   },
