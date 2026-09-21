@@ -15,6 +15,7 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-inter)', 'sans-serif'],
         serif: ['var(--font-fraunces)', 'serif'],
+        display: ['var(--font-space-grotesk)', 'sans-serif'],
       },
       maxWidth: {
         content: '1180px',

@@ -27,6 +27,7 @@ export const site = {
     { label: 'Sobre mí', href: '#sobre-mi' },
     { label: 'Proyectos', href: '#proyectos' },
     { label: 'Formación', href: '#formacion' },
+    { label: 'Shopify', href: '/shopify/' },
     { label: 'Contacto', href: '#contacto' },
   ],
 
@@ -88,6 +89,7 @@ export const site = {
         description:
           'Estrategia, contenido y captación con un objetivo claro: que la marca venda, no solo que se vea bien. Diez años montando esto de cero y también dentro de estructuras grandes.',
         tags: ['Estrategia', 'Contenido', 'Marca personal', 'Captación', 'Email marketing', 'SEO'],
+        link: null as { label: string; href: string } | null,
       },
       {
         icon: 'code' as const,
@@ -95,6 +97,10 @@ export const site = {
         description:
           'Webs, apps y herramientas a medida construidas con criterio de marketer: pensadas para convertir, no solo para funcionar. Python, Flask y frontend en el día a día.',
         tags: ['Python', 'Flask', 'REST APIs', 'HTML/CSS', 'Frontend', 'Git'],
+        link: { label: '¿Tienda Shopify? Mira lo que hago →', href: '/shopify/' } as {
+          label: string;
+          href: string;
+        } | null,
       },
       {
         icon: 'ai' as const,
@@ -102,6 +108,7 @@ export const site = {
         description:
           'Automatizaciones, agentes e integraciones con LLMs que quitan trabajo repetitivo de en medio y dejan tiempo para lo que de verdad mueve la aguja.',
         tags: ['LLMs', 'Prompt engineering', 'n8n', 'RAG', 'Anthropic', 'OpenAI API'],
+        link: null as { label: string; href: string } | null,
       },
     ],
     closing: 'Si tu proyecto necesita hablar los dos idiomas a la vez, probablemente sea buen momento para escribirme.',

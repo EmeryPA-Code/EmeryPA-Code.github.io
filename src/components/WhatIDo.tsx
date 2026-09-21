@@ -50,6 +50,14 @@ export default function WhatIDo() {
                       </li>
                     ))}
                   </ul>
+                  {card.link ? (
+                    <a
+                      href={card.link.href}
+                      className="mt-5 inline-flex items-center text-sm text-accent hover:underline"
+                    >
+                      {card.link.label}
+                    </a>
+                  ) : null}
                 </div>
               </Reveal>
             );
