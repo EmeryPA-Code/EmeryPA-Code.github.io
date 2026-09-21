@@ -35,6 +35,17 @@ export default function AboutMe() {
                 {about.highlight}
               </p>
             </Reveal>
+
+            <Reveal delay={260}>
+              <div className="mt-10">
+                <a
+                  href={about.cta.href}
+                  className="inline-flex items-center bg-ink text-bg text-sm px-6 py-3 hover:bg-accent transition-colors"
+                >
+                  {about.cta.label}
+                </a>
+              </div>
+            </Reveal>
           </div>
         </div>
       </div>

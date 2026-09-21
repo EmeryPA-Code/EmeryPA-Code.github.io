@@ -63,6 +63,17 @@ export default function Education() {
                 </ul>
               </details>
             </Reveal>
+
+            <Reveal delay={260}>
+              <div className="mt-8">
+                <a
+                  href={education.cta.href}
+                  className="inline-flex items-center bg-ink text-bg text-sm px-6 py-3 hover:bg-accent transition-colors"
+                >
+                  {education.cta.label}
+                </a>
+              </div>
+            </Reveal>
           </div>
         </div>
       </div>
