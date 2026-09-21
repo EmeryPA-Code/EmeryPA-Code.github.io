@@ -7,6 +7,16 @@ import Reveal from './Reveal';
 import Headline from './Headline';
 import SectionLabel from './SectionLabel';
 import TerminalBlock from './TerminalBlock';
+import {
+  PaletteIcon,
+  TypographyIcon,
+  LayoutIcon,
+  ImageIcon,
+  ComponentsIcon,
+  ResponsiveIcon,
+} from './icons/DesignIcons';
+
+const designIcons = [PaletteIcon, TypographyIcon, LayoutIcon, ImageIcon, ComponentsIcon, ResponsiveIcon];
 
 function PhaseVisual({ visual }: { visual: 'checklist' | 'audit' | 'design' | 'code' }) {
   if (visual === 'checklist') {
@@ -51,8 +61,13 @@ function PhaseVisual({ visual }: { visual: 'checklist' | 'audit' | 'design' | 'c
   if (visual === 'design') {
     return (
       <div className="grid grid-cols-3 gap-2">
-        {Array.from({ length: 6 }).map((_, i) => (
-          <div key={i} className="aspect-square rounded-lg border border-[#2A2A2E] bg-[#0B0B0C]" />
+        {designIcons.map((Icon, i) => (
+          <div
+            key={i}
+            className="aspect-square rounded-lg border border-[#2A2A2E] bg-[#0B0B0C] flex items-center justify-center"
+          >
+            <Icon />
+          </div>
         ))}
       </div>
     );
