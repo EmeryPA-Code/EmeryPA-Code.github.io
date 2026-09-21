@@ -294,6 +294,22 @@ export const shopify = {
     ],
   },
 
+  about: {
+    tag: '¿QUIÉN HAY DETRÁS?',
+    headline: ['No soy una agencia.', 'Soy yo, con criterio.'],
+    headlineItalicIndex: 1,
+    portraitAlt: 'Retrato de Emery Piqueras',
+    paragraphs: [
+      'Empecé montando mi propia marca, White Gorilla, y ahí aprendí lo que de verdad importa cuando el dinero que se juega es el tuyo: retorno, prioridades claras y gestión de principio a fin. Después pasé por Hawkers gestionando marketplaces a gran volumen, y por agencia llevando cuentas grandes bajo presión.',
+      'Hoy compagino el marketing y e-commerce de Piscinas Toi con un Máster en Full Stack Web Development, porque creo que el futuro de Shopify está en el cruce entre estrategia de marketing y ejecución técnica. Por eso no solo te diseño una tienda bonita: la construyo pensando en que venda.',
+    ],
+    facts: [
+      { value: '10+', label: 'Años en marketing y growth' },
+      { value: '2016', label: 'Fundador de White Gorilla Co' },
+      { value: 'Ahora', label: 'Máster en Full Stack Web Development' },
+    ],
+  },
+
   finalCta: {
     tag: 'HABLEMOS',
     headline: ['Tu tienda puede', 'vender más.'],

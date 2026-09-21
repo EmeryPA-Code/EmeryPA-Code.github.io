@@ -10,6 +10,7 @@ import CaseStudies from '@/components/shopify/CaseStudies';
 import Methodology from '@/components/shopify/Methodology';
 import ComplementaryServices from '@/components/shopify/ComplementaryServices';
 import FaqAccordion from '@/components/shopify/FaqAccordion';
+import AboutMe from '@/components/shopify/AboutMe';
 import FinalCta from '@/components/shopify/FinalCta';
 import Footer from '@/components/shopify/Footer';
 
@@ -29,6 +30,7 @@ export default function ShopifyPage() {
         <Methodology />
         <ComplementaryServices />
         <FaqAccordion />
+        <AboutMe />
         <FinalCta />
       </main>
       <Footer />
