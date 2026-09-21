@@ -7,7 +7,7 @@ import { shopify } from '@/content/shopify';
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
 const inputClasses =
-  'w-full bg-[#0B0B0C] border border-[#2A2A2E] rounded-lg text-[#F5F5F3] placeholder:text-[#9A9A9E] px-3.5 py-3 text-sm focus:outline-none focus:border-[#A6FF4D] transition-colors';
+  'bg-[#0B0B0C] border border-[#2A2A2E] rounded-lg text-[#F5F5F3] placeholder:text-[#9A9A9E] px-3.5 py-3 text-sm focus:outline-none focus:border-[#A6FF4D] transition-colors';
 
 export default function ContactForm() {
   const { intakeForm } = shopify;
@@ -57,14 +57,14 @@ export default function ContactForm() {
         <label htmlFor="name" className="block text-sm text-[#9A9A9E] mb-2">
           {intakeForm.fields.name.label}:
         </label>
-        <input id="name" name="name" type="text" required className={inputClasses} />
+        <input id="name" name="name" type="text" required className={`${inputClasses} w-full`} />
       </div>
 
       <div>
         <label htmlFor="email" className="block text-sm text-[#9A9A9E] mb-2">
           {intakeForm.fields.email.label}:
         </label>
-        <input id="email" name="email" type="email" required className={inputClasses} />
+        <input id="email" name="email" type="email" required className={`${inputClasses} w-full`} />
       </div>
 
       <div>
@@ -77,7 +77,7 @@ export default function ContactForm() {
             name="phoneDial"
             defaultValue={intakeForm.countryCodes[0].dial}
             aria-label="Prefijo del país"
-            className={`${inputClasses} dark-select w-28 shrink-0`}
+            className={`${inputClasses} dark-select w-24 md:w-28 shrink-0`}
           >
             {intakeForm.countryCodes.map((c) => (
               <option key={c.code} value={c.dial}>
@@ -91,7 +91,7 @@ export default function ContactForm() {
             type="tel"
             required
             placeholder={intakeForm.fields.phone.placeholder}
-            className={inputClasses}
+            className={`${inputClasses} flex-1 min-w-0`}
           />
         </div>
       </div>
@@ -106,7 +106,7 @@ export default function ContactForm() {
           type="text"
           required
           placeholder={intakeForm.fields.storeUrl.placeholder}
-          className={inputClasses}
+          className={`${inputClasses} w-full`}
         />
       </div>
 
@@ -119,7 +119,7 @@ export default function ContactForm() {
           name="billing"
           required
           defaultValue=""
-          className={`${inputClasses} dark-select`}
+          className={`${inputClasses} dark-select w-full`}
         >
           <option value="" disabled>
             {intakeForm.fields.billing.placeholder}
@@ -141,7 +141,7 @@ export default function ContactForm() {
           name="founder"
           required
           defaultValue=""
-          className={`${inputClasses} dark-select`}
+          className={`${inputClasses} dark-select w-full`}
         >
           <option value="" disabled>
             {intakeForm.fields.founder.placeholder}
@@ -163,7 +163,7 @@ export default function ContactForm() {
           name="problems"
           required
           rows={4}
-          className={`${inputClasses} resize-y`}
+          className={`${inputClasses} resize-y w-full`}
         />
       </div>
 
@@ -176,7 +176,7 @@ export default function ContactForm() {
           name="budget"
           required
           defaultValue=""
-          className={`${inputClasses} dark-select`}
+          className={`${inputClasses} dark-select w-full`}
         >
           <option value="" disabled>
             {intakeForm.fields.budget.placeholder}
