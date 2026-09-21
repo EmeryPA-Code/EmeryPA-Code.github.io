@@ -185,7 +185,8 @@ export const site = {
     items: [
       {
         name: 'Rívalo',
-        logo: '/images/projects/rivalo-logo.png',
+        logo: '/images/projects/rivalo-logo.png' as string | null,
+        logoDark: true,
         description:
           'Plataforma de predicciones deportivas con un giro coleccionable: cartas de jugadores y equipos que dan vida al juego de acertar resultados.',
         stack: ['Producto', 'Frontend', 'Gamificación'],
@@ -194,7 +195,8 @@ export const site = {
       },
       {
         name: 'Mynx',
-        logo: null as string | null,
+        logo: '/images/logos/mynx.png' as string | null,
+        logoDark: false,
         description:
           'Un único chat para hablar con GPT, Claude y Gemini a la vez, sin saltar entre pestañas ni suscripciones sueltas.',
         stack: ['LLMs', 'Producto', 'IA aplicada'],
@@ -203,7 +205,8 @@ export const site = {
       },
       {
         name: 'Acuatoi',
-        logo: null as string | null,
+        logo: '/images/logos/piscinas-toi.png' as string | null,
+        logoDark: false,
         description:
           'Tienda de merchandising y lifestyle que llevo junto a mi hermano: diseño de producto, e-commerce y comunidad de marca.',
         stack: ['E-commerce', 'Branding', 'Shopify'],
@@ -213,6 +216,7 @@ export const site = {
       {
         name: 'AI Vibe Builders',
         logo: null as string | null,
+        logoDark: false,
         description:
           'Comunidad para gente que construye con IA en español: recursos, conversación y proyectos compartidos sobre marketing, código y automatización.',
         stack: ['Comunidad', 'IA', 'Contenido'],

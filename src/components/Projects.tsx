@@ -25,15 +25,25 @@ export default function Projects() {
               <div className="p-8 md:p-10 h-full flex flex-col">
                 <div className="flex items-center justify-between gap-4 mb-4">
                   {project.logo ? (
-                    <div className="inline-flex bg-ink px-3 py-2">
+                    project.logoDark ? (
+                      <div className="inline-flex bg-ink px-3 py-2">
+                        <Image
+                          src={project.logo}
+                          alt={project.name}
+                          width={110}
+                          height={36}
+                          className="h-7 w-auto"
+                        />
+                      </div>
+                    ) : (
                       <Image
                         src={project.logo}
                         alt={project.name}
-                        width={110}
-                        height={36}
-                        className="h-7 w-auto"
+                        width={130}
+                        height={40}
+                        className="h-8 md:h-9 w-auto"
                       />
-                    </div>
+                    )
                   ) : (
                     <h3 className="text-2xl md:text-3xl font-serif italic text-ink">
                       {project.name}
