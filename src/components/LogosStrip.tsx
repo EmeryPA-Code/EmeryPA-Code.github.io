@@ -12,29 +12,23 @@ export default function LogosStrip() {
           <p className="text-xs tracking-[0.2em] text-ink-soft mb-8">{logos.label.toUpperCase()}</p>
         </Reveal>
         <Reveal delay={80}>
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-6">
-            {logos.items.map((logo) =>
-              logo.dark ? (
-                <div key={logo.src} className="bg-ink px-4 py-2.5 flex items-center">
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={120}
-                    height={36}
-                    className="h-6 w-auto"
-                  />
-                </div>
-              ) : (
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-6">
+            {logos.items.map((logo) => (
+              <div
+                key={logo.src}
+                className={`relative w-28 h-12 md:w-32 md:h-14 flex items-center justify-center ${
+                  logo.dark ? 'bg-ink' : ''
+                }`}
+              >
                 <Image
-                  key={logo.src}
                   src={logo.src}
                   alt={logo.alt}
-                  width={120}
-                  height={36}
-                  className="h-8 w-auto opacity-70"
+                  fill
+                  sizes="130px"
+                  className={`object-contain p-1.5 ${logo.dark ? '' : 'opacity-70'}`}
                 />
-              )
-            )}
+              </div>
+            ))}
           </div>
         </Reveal>
       </div>

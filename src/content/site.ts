@@ -68,11 +68,12 @@ export const site = {
   logos: {
     label: 'Parte de mi recorrido',
     items: [
+      { src: '/images/logos/hawkers.png', alt: 'Hawkers', dark: false },
+      { src: '/images/logos/piscinas-toi.png', alt: 'Piscinas Toi', dark: false },
+      { src: '/images/logos/white-gorilla.png', alt: 'White Gorilla Co', dark: false },
+      { src: '/images/logos/phone-house.png', alt: 'Phone House', dark: false },
+      { src: '/images/logos/mynx.png', alt: 'Mynx', dark: false },
       { src: '/images/projects/rivalo-logo.png', alt: 'Rívalo', dark: true },
-      { src: '/images/logos/logo-2.svg', alt: 'Logotipo 2 (sustituir)', dark: false },
-      { src: '/images/logos/logo-3.svg', alt: 'Logotipo 3 (sustituir)', dark: false },
-      { src: '/images/logos/logo-4.svg', alt: 'Logotipo 4 (sustituir)', dark: false },
-      { src: '/images/logos/logo-5.svg', alt: 'Logotipo 5 (sustituir)', dark: false },
     ],
   },
 
