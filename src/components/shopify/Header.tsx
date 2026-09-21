@@ -7,6 +7,7 @@ import StoreMark from './icons/StoreMark';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -16,11 +17,25 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    const hero = document.getElementById('inicio');
+    if (!hero) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setPastHero(!entry.isIntersecting),
+      { rootMargin: '-64px 0px 0px 0px' }
+    );
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, []);
+
+  const hidden = pastHero && !open;
+
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled ? 'bg-[#0B0B0C]/90 backdrop-blur border-b border-[#2A2A2E]' : 'bg-transparent'
-      }`}
+      } ${hidden ? '-translate-y-full opacity-0 pointer-events-none' : 'translate-y-0 opacity-100'}`}
     >
       <div className="max-w-content mx-auto px-6 md:px-10 h-16 md:h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 shrink-0">
