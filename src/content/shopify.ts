@@ -269,7 +269,7 @@ export const shopify = {
       {
         question: '¿Cómo es el pago?',
         answer:
-          '[PLACEHOLDER — define aquí tu estructura de pagos: por ejemplo, un % al inicio y el resto al entregar, o pagos por fases.]',
+          'Siempre por adelantado, ya que una vez efectuado el pago empezamos a mover todos nuestros recursos para brindarte el mejor servicio.',
       },
       {
         question: '¿Cómo nos comunicamos durante el proyecto?',
@@ -284,7 +284,7 @@ export const shopify = {
       {
         question: '¿Trabajas con tiendas que ya existen o solo desde cero?',
         answer:
-          'Las dos cosas. La mayoría de proyectos son tiendas ya en marcha que necesitan optimización, no una tienda nueva de cero.',
+          'Las dos cosas. La mayoría de proyectos son tiendas ya en marcha que necesitan optimización, no una tienda nueva de cero. Eso sí, siempre dependerá del presupuesto.',
       },
       {
         question: '¿Qué necesitas de mí para empezar?',
