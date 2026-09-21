@@ -23,11 +23,8 @@ export const shopify = {
 
   hero: {
     eyebrow: 'DESARROLLO Y OPTIMIZACIÓN SHOPIFY',
-    headline: [
-      { text: 'Hago que tu ', accent: false },
-      { text: 'tienda', accent: true },
-      { text: ' venda más', accent: false },
-    ],
+    headlineBefore: 'Hago que tu',
+    headlineAfter: 'venda más',
     headlineLine2: 'con el tráfico que ya tienes.',
     subtitle:
       'Diseño, desarrollo y optimizo tiendas Shopify con criterio de marketer: cada cambio se mide en pedidos, no en "queda más bonito".',

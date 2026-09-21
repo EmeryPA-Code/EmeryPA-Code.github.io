@@ -39,6 +39,26 @@
   animation: blink-cursor 1s step-end infinite;
 }
 
+@keyframes shopify-pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 18px 2px rgba(149, 191, 71, 0.35), 0 0 40px 8px rgba(149, 191, 71, 0.12);
+  }
+  50% {
+    box-shadow: 0 0 28px 6px rgba(149, 191, 71, 0.55), 0 0 60px 14px rgba(149, 191, 71, 0.2);
+  }
+}
+
+.shopify-glow {
+  box-shadow: 0 0 18px 2px rgba(149, 191, 71, 0.35), 0 0 40px 8px rgba(149, 191, 71, 0.12);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .shopify-glow {
+    animation: shopify-pulse-glow 2.8s ease-in-out infinite;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .marquee-mask > div {
     animation: none !important;

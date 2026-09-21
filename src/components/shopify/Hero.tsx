@@ -3,7 +3,7 @@ import { shopify } from '@/content/shopify';
 import Reveal from './Reveal';
 import Marquee from './Marquee';
 import OrderToastStack from './OrderToast';
-import StoreMark from './icons/StoreMark';
+import ShopifyBadge from './icons/ShopifyBadge';
 
 export default function Hero() {
   const { hero } = shopify;
@@ -19,13 +19,10 @@ export default function Hero() {
           <div className="lg:col-span-7">
             <Reveal delay={60}>
               <h1 className="font-display font-bold leading-[1.02] tracking-tight text-[#F5F5F3] text-4xl sm:text-5xl md:text-6xl xl:text-7xl">
-                <span className="inline-flex items-center flex-wrap gap-x-3">
-                  {hero.headline.map((part) => (
-                    <span key={part.text} className={part.accent ? 'text-[#A6FF4D]' : undefined}>
-                      {part.text}
-                    </span>
-                  ))}
-                  <StoreMark />
+                <span className="inline-flex items-center flex-wrap gap-x-3 gap-y-2">
+                  <span>{hero.headlineBefore}</span>
+                  <ShopifyBadge />
+                  <span>{hero.headlineAfter}</span>
                 </span>
                 <span className="block mt-1">{hero.headlineLine2}</span>
               </h1>
