@@ -16,17 +16,27 @@ export default function LogosStrip() {
             {logos.items.map((logo) => (
               <div
                 key={logo.src}
-                className={`relative w-28 h-12 md:w-32 md:h-14 flex items-center justify-center ${
-                  logo.dark ? 'bg-ink' : ''
-                }`}
+                className="relative w-28 h-12 md:w-32 md:h-14 flex items-center justify-center"
               >
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  fill
-                  sizes="130px"
-                  className={`object-contain p-1.5 ${logo.dark ? '' : 'opacity-70'}`}
-                />
+                {logo.dark ? (
+                  <div className="relative w-full h-7 md:h-8 bg-ink px-3 flex items-center justify-center">
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      fill
+                      sizes="130px"
+                      className="object-contain p-1"
+                    />
+                  </div>
+                ) : (
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    fill
+                    sizes="130px"
+                    className="object-contain p-1.5 opacity-70"
+                  />
+                )}
               </div>
             ))}
           </div>
