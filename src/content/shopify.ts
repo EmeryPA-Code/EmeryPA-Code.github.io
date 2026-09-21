@@ -19,7 +19,7 @@ export const shopify = {
     { label: 'FAQ', href: '#faq' },
   ],
   ctaLabel: 'Trabajemos juntos',
-  ctaHref: '/#contacto',
+  ctaHref: '#contacto',
 
   hero: {
     eyebrow: 'DESARROLLO Y OPTIMIZACIÓN SHOPIFY',
@@ -97,7 +97,7 @@ export const shopify = {
         description: 'La gente llega al carrito y se va justo antes de pagar.',
       },
     ],
-    cta: { label: 'Quiero arreglar esto', href: '/#contacto' },
+    cta: { label: 'Quiero arreglar esto', href: '#contacto' },
   },
 
   solutions: {
@@ -124,7 +124,7 @@ export const shopify = {
         visual: 'orders' as const,
       },
     ],
-    cta: { label: 'Cuéntame tu caso', href: '/#contacto' },
+    cta: { label: 'Cuéntame tu caso', href: '#contacto' },
   },
 
   calculator: {

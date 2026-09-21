@@ -1,6 +1,7 @@
 import { shopify } from '@/content/shopify';
 import Reveal from './Reveal';
 import Headline from './Headline';
+import ContactForm from './ContactForm';
 
 export default function FinalCta() {
   const { finalCta } = shopify;
@@ -15,15 +16,15 @@ export default function FinalCta() {
             italicIndex={finalCta.headlineItalicIndex}
             className="text-4xl md:text-6xl xl:text-7xl mb-8 justify-center"
           />
-          <p className="text-base md:text-lg text-[#9A9A9E] max-w-xl mx-auto mb-12 leading-relaxed">
+          <p className="text-base md:text-lg text-[#9A9A9E] max-w-xl mx-auto mb-16 leading-relaxed">
             {finalCta.subtitle}
           </p>
-          <a
-            href={shopify.ctaHref}
-            className="inline-flex items-center bg-[#A6FF4D] text-[#0B0B0C] text-sm font-medium px-8 py-4 rounded-full hover:opacity-90 transition-opacity"
-          >
-            {shopify.ctaLabel}
-          </a>
+        </Reveal>
+
+        <Reveal delay={100}>
+          <div className="max-w-2xl mx-auto rounded-2xl border border-[#2A2A2E] bg-[#141416] p-6 md:p-10">
+            <ContactForm />
+          </div>
         </Reveal>
       </div>
     </section>
