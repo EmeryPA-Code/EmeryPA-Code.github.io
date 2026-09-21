@@ -283,6 +283,55 @@ export const shopify = {
     headlineItalicIndex: 1,
     subtitle: 'Cuéntame en qué punto está tu Shopify y qué te gustaría mejorar primero.',
   },
+
+  intakeForm: {
+    countryCodes: [
+      { code: 'ES', dial: '+34' },
+      { code: 'PT', dial: '+351' },
+      { code: 'FR', dial: '+33' },
+      { code: 'MX', dial: '+52' },
+      { code: 'AR', dial: '+54' },
+      { code: 'CO', dial: '+57' },
+      { code: 'US', dial: '+1' },
+    ],
+    fields: {
+      name: { label: 'Nombre y Apellidos', placeholder: '' },
+      email: { label: 'Correo electrónico', placeholder: '' },
+      phone: { label: 'Número de teléfono', placeholder: '600 000 000' },
+      storeUrl: { label: 'Link de tu Tienda Online', placeholder: 'tutienda.com' },
+      billing: {
+        label: 'Facturación mensual',
+        placeholder: 'Seleccionar...',
+        options: [
+          'Menos de 1.000 €',
+          '1.000 € – 3.000 €',
+          '3.000 € – 5.000 €',
+          '5.000 € – 10.000 €',
+          '10.000 € – 25.000 €',
+          'Más de 25.000 €',
+        ],
+      },
+      founder: {
+        label: '¿Eres el fundador/a de la marca?',
+        placeholder: 'Seleccionar',
+        options: ['Sí, soy el fundador/a', 'No, formo parte del equipo', 'Soy agencia o freelance para esta marca'],
+      },
+      problems: {
+        label: '¿Qué problemas estás teniendo actualmente en tu Tienda Online?',
+        placeholder: '',
+      },
+      budget: {
+        label:
+          '¿Invertirías +6.000 € para mejorar la tasa de conversión de tu Tienda Online de forma asegurada bajo contrato?',
+        placeholder: 'Seleccionar',
+        options: ['Sí', 'No', 'Depende, cuéntame más'],
+      },
+    },
+    submitLabel: 'Enviar',
+    submittingLabel: 'Enviando…',
+    successMessage: 'Gracias, he recibido tu solicitud. Te responderé lo antes posible.',
+    errorMessage: 'Algo ha fallado al enviar el formulario. Prueba de nuevo o escríbeme directamente por email.',
+  },
 };
 
 export type Shopify = typeof shopify;

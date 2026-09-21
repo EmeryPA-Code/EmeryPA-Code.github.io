@@ -2,14 +2,15 @@
 
 import { useState, type FormEvent } from 'react';
 import { site } from '@/content/site';
+import { shopify } from '@/content/shopify';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
 const inputClasses =
-  'w-full bg-transparent border-0 border-b border-[#2A2A2E] text-[#F5F5F3] placeholder:text-[#9A9A9E] py-2.5 text-sm focus:outline-none focus:border-[#A6FF4D] transition-colors';
+  'w-full bg-[#0B0B0C] border border-[#2A2A2E] rounded-lg text-[#F5F5F3] placeholder:text-[#9A9A9E] px-3.5 py-3 text-sm focus:outline-none focus:border-[#A6FF4D] transition-colors';
 
 export default function ContactForm() {
-  const { contactForm } = site;
+  const { intakeForm } = shopify;
   const [status, setStatus] = useState<Status>('idle');
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -18,9 +19,14 @@ export default function ContactForm() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
+    const dial = formData.get('phoneDial');
+    const number = formData.get('phoneNumber');
+    formData.set('phone', `${dial} ${number}`.trim());
+    formData.delete('phoneDial');
+    formData.delete('phoneNumber');
 
     try {
-      const response = await fetch(`https://formspree.io/f/${contactForm.formspreeId}`, {
+      const response = await fetch(`https://formspree.io/f/${site.contactForm.formspreeId}`, {
         method: 'POST',
         headers: { Accept: 'application/json' },
         body: formData,
@@ -40,112 +46,160 @@ export default function ContactForm() {
   if (status === 'success') {
     return (
       <p className="text-base md:text-lg text-[#F5F5F3] text-center py-8" role="status">
-        {contactForm.successMessage}
+        {intakeForm.successMessage}
       </p>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="text-left">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
-        <div>
-          <label htmlFor="name" className="block text-xs tracking-[0.15em] text-[#9A9A9E] mb-1">
-            {contactForm.fields.name.label.toUpperCase()}
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            placeholder={contactForm.fields.name.placeholder}
-            className={inputClasses}
-          />
-        </div>
+    <form onSubmit={handleSubmit} className="text-left space-y-6">
+      <div>
+        <label htmlFor="name" className="block text-sm text-[#9A9A9E] mb-2">
+          {intakeForm.fields.name.label}:
+        </label>
+        <input id="name" name="name" type="text" required className={inputClasses} />
+      </div>
 
-        <div>
-          <label htmlFor="email" className="block text-xs tracking-[0.15em] text-[#9A9A9E] mb-1">
-            {contactForm.fields.email.label.toUpperCase()}
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            placeholder={contactForm.fields.email.placeholder}
-            className={inputClasses}
-          />
-        </div>
+      <div>
+        <label htmlFor="email" className="block text-sm text-[#9A9A9E] mb-2">
+          {intakeForm.fields.email.label}:
+        </label>
+        <input id="email" name="email" type="email" required className={inputClasses} />
+      </div>
 
-        <div>
-          <label htmlFor="phone" className="block text-xs tracking-[0.15em] text-[#9A9A9E] mb-1">
-            {contactForm.fields.phone.label.toUpperCase()}
-          </label>
+      <div>
+        <label htmlFor="phoneNumber" className="block text-sm text-[#9A9A9E] mb-2">
+          {intakeForm.fields.phone.label}:
+        </label>
+        <div className="flex gap-2">
+          <select
+            id="phoneDial"
+            name="phoneDial"
+            defaultValue={intakeForm.countryCodes[0].dial}
+            aria-label="Prefijo del país"
+            className={`${inputClasses} dark-select w-28 shrink-0`}
+          >
+            {intakeForm.countryCodes.map((c) => (
+              <option key={c.code} value={c.dial}>
+                {c.code} {c.dial}
+              </option>
+            ))}
+          </select>
           <input
-            id="phone"
-            name="phone"
+            id="phoneNumber"
+            name="phoneNumber"
             type="tel"
             required
-            placeholder={contactForm.fields.phone.placeholder}
+            placeholder={intakeForm.fields.phone.placeholder}
             className={inputClasses}
           />
-        </div>
-
-        <div>
-          <label htmlFor="billing" className="block text-xs tracking-[0.15em] text-[#9A9A9E] mb-1">
-            {contactForm.fields.billing.label.toUpperCase()}
-          </label>
-          <select
-            id="billing"
-            name="billing"
-            required
-            defaultValue=""
-            className={`${inputClasses} dark-select`}
-          >
-            <option value="" disabled>
-              {contactForm.fields.billing.placeholder}
-            </option>
-            {contactForm.fields.billing.options.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="sm:col-span-2">
-          <label htmlFor="service" className="block text-xs tracking-[0.15em] text-[#9A9A9E] mb-1">
-            {contactForm.fields.service.label.toUpperCase()}
-          </label>
-          <select
-            id="service"
-            name="service"
-            required
-            defaultValue=""
-            className={`${inputClasses} dark-select`}
-          >
-            <option value="" disabled>
-              {contactForm.fields.service.placeholder}
-            </option>
-            {contactForm.fields.service.options.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
         </div>
       </div>
 
-      <div className="mt-8 flex flex-col items-center gap-3">
+      <div>
+        <label htmlFor="storeUrl" className="block text-sm text-[#9A9A9E] mb-2">
+          {intakeForm.fields.storeUrl.label}:
+        </label>
+        <input
+          id="storeUrl"
+          name="storeUrl"
+          type="text"
+          required
+          placeholder={intakeForm.fields.storeUrl.placeholder}
+          className={inputClasses}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="billing" className="block text-sm text-[#9A9A9E] mb-2">
+          {intakeForm.fields.billing.label}:
+        </label>
+        <select
+          id="billing"
+          name="billing"
+          required
+          defaultValue=""
+          className={`${inputClasses} dark-select`}
+        >
+          <option value="" disabled>
+            {intakeForm.fields.billing.placeholder}
+          </option>
+          {intakeForm.fields.billing.options.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div>
+        <label htmlFor="founder" className="block text-sm text-[#9A9A9E] mb-2">
+          {intakeForm.fields.founder.label}
+        </label>
+        <select
+          id="founder"
+          name="founder"
+          required
+          defaultValue=""
+          className={`${inputClasses} dark-select`}
+        >
+          <option value="" disabled>
+            {intakeForm.fields.founder.placeholder}
+          </option>
+          {intakeForm.fields.founder.options.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div>
+        <label htmlFor="problems" className="block text-sm text-[#9A9A9E] mb-2">
+          {intakeForm.fields.problems.label}
+        </label>
+        <textarea
+          id="problems"
+          name="problems"
+          required
+          rows={4}
+          className={`${inputClasses} resize-y`}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="budget" className="block text-sm text-[#9A9A9E] mb-2">
+          {intakeForm.fields.budget.label}
+        </label>
+        <select
+          id="budget"
+          name="budget"
+          required
+          defaultValue=""
+          className={`${inputClasses} dark-select`}
+        >
+          <option value="" disabled>
+            {intakeForm.fields.budget.placeholder}
+          </option>
+          {intakeForm.fields.budget.options.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="flex flex-col items-center gap-3 pt-2">
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="inline-flex items-center bg-[#A6FF4D] text-[#0B0B0C] text-sm font-medium px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity disabled:opacity-60"
+          className="w-full inline-flex items-center justify-center bg-[#A6FF4D] text-[#0B0B0C] text-sm font-medium px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity disabled:opacity-60"
         >
-          {status === 'submitting' ? contactForm.submittingLabel : contactForm.submitLabel}
+          {status === 'submitting' ? intakeForm.submittingLabel : intakeForm.submitLabel}
         </button>
         {status === 'error' ? (
           <p className="text-sm text-[#A6FF4D]" role="alert">
-            {contactForm.errorMessage}
+            {intakeForm.errorMessage}
           </p>
         ) : null}
       </div>
