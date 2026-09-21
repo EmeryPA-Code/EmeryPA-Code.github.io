@@ -1,4 +1,5 @@
 import Header from '@/components/shopify/Header';
+import FloatingNav from '@/components/shopify/FloatingNav';
 import Hero from '@/components/shopify/Hero';
 import LogosMarquee from '@/components/shopify/LogosMarquee';
 import ProblemsBento from '@/components/shopify/ProblemsBento';
@@ -16,6 +17,7 @@ export default function ShopifyPage() {
   return (
     <div className="font-sans text-[#F5F5F3]">
       <Header />
+      <FloatingNav />
       <main>
         <Hero />
         <LogosMarquee />

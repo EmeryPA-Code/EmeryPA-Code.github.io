@@ -21,6 +21,14 @@ export const shopify = {
   ctaLabel: 'Trabajemos juntos',
   ctaHref: '#contacto',
 
+  floatingNav: [
+    { key: 'inicio', label: 'Inicio', href: '#inicio' },
+    { key: 'problemas', label: 'Problemas', href: '#problemas' },
+    { key: 'soluciones', label: 'Soluciones', href: '#soluciones' },
+    { key: 'calculadora', label: 'Calculadora', href: '#calculadora' },
+    { key: 'faq', label: "FAQ's", href: '#faq' },
+  ],
+
   hero: {
     eyebrow: 'DESARROLLO Y OPTIMIZACIÓN SHOPIFY',
     headlineBefore: 'Hago que tu',
