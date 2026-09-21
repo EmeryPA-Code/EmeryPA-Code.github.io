@@ -145,10 +145,9 @@ export const shopify = {
 
   guarantee: {
     tag: 'MI FORMA DE TRABAJAR',
-    headline: ['Compromiso,', 'no promesas vacías.'],
+    headline: ['Garantía contractual', 'de resultados.'],
     headlineItalicIndex: 1,
-    // Placeholder: define aquí qué garantía ofreces realmente antes de publicar.
-    text: '[PLACEHOLDER — escribe aquí tu garantía real: por ejemplo, qué pasa si no se cumplen los plazos, qué incluye el soporte post-lanzamiento, o bajo qué condiciones seguimos trabajando juntos hasta que el resultado te convenza.]',
+    text: 'Si tu conversión no sube después de realizar tu web, seguimos trabajando gratis hasta conseguirlo. No cobramos por horas. Cobramos por resultados.',
   },
 
   cases: {
