@@ -67,9 +67,15 @@ export default function Hero() {
             {hero.screenshots.map((shot) => (
               <div
                 key={shot.src}
-                className="w-[280px] md:w-[340px] aspect-[10/7] rounded-xl overflow-hidden border border-[#2A2A2E] shrink-0"
+                className="w-[300px] md:w-[380px] aspect-[16/9] rounded-xl overflow-hidden border border-[#2A2A2E] shrink-0"
               >
-                <Image src={shot.src} alt={shot.alt} width={400} height={280} className="w-full h-full object-cover" />
+                <Image
+                  src={shot.src}
+                  alt={shot.alt}
+                  width={900}
+                  height={467}
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
             ))}
           </Marquee>

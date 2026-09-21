@@ -38,10 +38,10 @@ export const shopify = {
       { store: 'tutienda.com', amount: '76,50 €', product: 'Pedido nuevo' },
     ],
     screenshots: [
-      { src: '/images/shopify/store-1.svg', alt: 'Placeholder captura de tienda Shopify 1' },
-      { src: '/images/shopify/store-2.svg', alt: 'Placeholder captura de tienda Shopify 2' },
-      { src: '/images/shopify/store-3.svg', alt: 'Placeholder captura de tienda Shopify 3' },
-      { src: '/images/shopify/store-4.svg', alt: 'Placeholder captura de tienda Shopify 4' },
+      { src: '/images/shopify/store-1.jpg', alt: 'Captura de la tienda Naranjamania' },
+      { src: '/images/shopify/store-2.jpg', alt: 'Captura de la tienda Hawkers' },
+      { src: '/images/shopify/store-3.jpg', alt: 'Captura de la tienda Toi' },
+      { src: '/images/shopify/store-4.jpg', alt: 'Captura de la tienda Piscinas Toi' },
     ],
   },
 
