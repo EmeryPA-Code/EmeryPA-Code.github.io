@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 
 export default function Footer() {
@@ -8,9 +10,13 @@ export default function Footer() {
       <div className="max-w-content mx-auto px-6 md:px-10 flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-[#9A9A9E]">
         <span className="text-[#F5F5F3]">Emery Piqueras</span>
 
-        <a href="#inicio" className="hover:text-[#F5F5F3] transition-colors">
+        <button
+          type="button"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="hover:text-[#F5F5F3] transition-colors"
+        >
           Volver arriba ↑
-        </a>
+        </button>
 
         <div className="flex items-center gap-6">
           <span>© {year} Emery Piqueras</span>

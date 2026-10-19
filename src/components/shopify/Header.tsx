@@ -2,10 +2,17 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { shopify } from '@/content/shopify';
 import StoreMark from './icons/StoreMark';
 
+const SHOPIFY_ROOT = '/shopify/';
+
 export default function Header() {
+  const pathname = usePathname();
+  const isRoot = pathname === '/shopify' || pathname === SHOPIFY_ROOT;
+  const resolveHref = (hash: string) => (isRoot ? hash : `${SHOPIFY_ROOT}${hash}`);
+
   const [scrolled, setScrolled] = useState(false);
   const [pastHero, setPastHero] = useState(false);
   const [open, setOpen] = useState(false);
@@ -49,7 +56,7 @@ export default function Header() {
           {shopify.nav.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={resolveHref(item.href)}
               className="text-sm text-[#9A9A9E] hover:text-[#A6FF4D] transition-colors"
             >
               {item.label}
@@ -59,7 +66,7 @@ export default function Header() {
 
         <div className="flex items-center gap-4">
           <a
-            href={shopify.ctaHref}
+            href={resolveHref(shopify.ctaHref)}
             className="hidden sm:inline-flex items-center bg-[#A6FF4D] text-[#0B0B0C] text-sm font-medium px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity"
           >
             {shopify.ctaLabel}
@@ -82,11 +89,16 @@ export default function Header() {
       {open ? (
         <nav id="mobile-nav-shopify" className="lg:hidden bg-[#0B0B0C] border-t border-[#2A2A2E] px-6 py-6 flex flex-col gap-4">
           {shopify.nav.map((item) => (
-            <a key={item.href} href={item.href} className="text-base text-[#F5F5F3]" onClick={() => setOpen(false)}>
+            <a
+              key={item.href}
+              href={resolveHref(item.href)}
+              className="text-base text-[#F5F5F3]"
+              onClick={() => setOpen(false)}
+            >
               {item.label}
             </a>
           ))}
-          <a href={shopify.ctaHref} className="text-base text-[#A6FF4D]">
+          <a href={resolveHref(shopify.ctaHref)} className="text-base text-[#A6FF4D]">
             {shopify.ctaLabel}
           </a>
         </nav>
