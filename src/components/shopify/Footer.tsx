@@ -20,6 +20,9 @@ export default function Footer() {
 
         <div className="flex items-center gap-6">
           <span>© {year} Emery Piqueras</span>
+          <Link href="/shopify/checklist/" className="hover:text-[#F5F5F3] transition-colors">
+            Checklist gratis
+          </Link>
           <Link href="/" className="hover:text-[#F5F5F3] transition-colors">
             Web principal
           </Link>

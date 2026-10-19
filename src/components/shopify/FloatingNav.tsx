@@ -13,18 +13,27 @@ const icons = {
 };
 
 export default function FloatingNav() {
-  const [visible, setVisible] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
+  const [footerVisible, setFooterVisible] = useState(false);
   const [active, setActive] = useState('inicio');
+  const visible = pastHero && !footerVisible;
 
   useEffect(() => {
     const hero = document.getElementById('inicio');
     if (!hero) return;
 
     const heroObserver = new IntersectionObserver(
-      ([entry]) => setVisible(!entry.isIntersecting),
+      ([entry]) => setPastHero(!entry.isIntersecting),
       { rootMargin: '-64px 0px 0px 0px' }
     );
     heroObserver.observe(hero);
+
+    const footer = document.querySelector('footer');
+    const footerObserver = new IntersectionObserver(
+      ([entry]) => setFooterVisible(entry.isIntersecting),
+      { rootMargin: '0px' }
+    );
+    if (footer) footerObserver.observe(footer);
 
     const sectionIds = shopify.floatingNav.map((item) => item.key);
     const sections = sectionIds
@@ -45,6 +54,7 @@ export default function FloatingNav() {
 
     return () => {
       heroObserver.disconnect();
+      footerObserver.disconnect();
       spyObserver.disconnect();
     };
   }, []);
