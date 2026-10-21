@@ -72,6 +72,22 @@ export default function ChecklistGate({ onUnlock }: { onUnlock: () => void }) {
               <p className="text-base md:text-lg text-[#9A9A9E] max-w-xl leading-relaxed mb-8">
                 {gate.subtitle}
               </p>
+
+              <a
+                href="#gate-form"
+                className="lg:hidden inline-flex items-center gap-2 bg-[#A6FF4D] text-[#0B0B0C] text-sm font-medium px-6 py-3 rounded-full mb-10 hover:opacity-90 transition-opacity"
+              >
+                Quiero mi checklist
+                <svg viewBox="0 0 16 16" className="w-3.5 h-3.5" fill="none" aria-hidden="true">
+                  <path
+                    d="M8 3v10M4 9l4 4 4-4"
+                    stroke="#0B0B0C"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
             </Reveal>
 
             <Reveal delay={80}>
@@ -121,7 +137,7 @@ export default function ChecklistGate({ onUnlock }: { onUnlock: () => void }) {
 
           <div className="lg:col-span-5">
             <Reveal delay={100}>
-              <div className="rounded-2xl border border-[#2A2A2E] bg-[#141416] p-6 md:p-8">
+              <div id="gate-form" className="rounded-2xl border border-[#2A2A2E] bg-[#141416] p-6 md:p-8 scroll-mt-24">
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
                     <label htmlFor="gate-email" className="block text-sm text-[#9A9A9E] mb-2">
