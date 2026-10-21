@@ -19,6 +19,29 @@ export const checklist = {
   counterLabel: 'Fallos encontrados',
   storageKey: 'emerypa-checklist-v1',
 
+  gate: {
+    unlockStorageKey: 'emerypa-checklist-unlocked',
+    tag: 'RECURSO GRATIS',
+    headline: ['Accede gratis a los', '20 fallos que te quitan ventas.'],
+    headlineItalicIndex: 1,
+    subtitle:
+      'Dime dónde te escribo y te doy acceso inmediato: 20 puntos de auditoría reales, organizados por zonas, para que sepas exactamente qué está frenando tu tienda.',
+    benefits: [
+      '20 puntos de auditoría real, no genéricos',
+      'Organizados en 6 zonas: tarjeta, ficha, carrito, checkout, móvil y más',
+      'Sabrás al momento si estás perdiendo ventas y por qué',
+    ],
+    previewLabel: 'Esto es lo que vas a poder marcar',
+    fields: {
+      email: { label: 'Correo electrónico', placeholder: 'tucorreo@tutienda.com' },
+      whatsapp: { label: 'WhatsApp', placeholder: '600 000 000' },
+    },
+    submitLabel: 'Darme acceso a la checklist',
+    submittingLabel: 'Enviando…',
+    privacyNote: 'Sin spam. Solo te escribo si tiene sentido para tu tienda.',
+    errorMessage: 'Algo ha fallado al enviar el formulario. Prueba de nuevo o escríbeme directamente por email.',
+  },
+
   zones: [
     {
       id: 'tarjeta',

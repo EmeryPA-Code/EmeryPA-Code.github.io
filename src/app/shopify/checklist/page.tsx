@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { checklist } from '@/content/checklist';
 import Header from '@/components/shopify/Header';
 import Footer from '@/components/shopify/Footer';
-import ChecklistApp from '@/components/shopify/checklist/ChecklistApp';
+import ChecklistGatekeeper from '@/components/shopify/checklist/ChecklistGatekeeper';
 
 export const metadata: Metadata = {
   title: checklist.meta.title,
@@ -39,7 +39,7 @@ export default function ChecklistPage() {
     <div className="font-sans text-[#F5F5F3]">
       <Header />
       <main>
-        <ChecklistApp />
+        <ChecklistGatekeeper />
       </main>
       <Footer />
     </div>
