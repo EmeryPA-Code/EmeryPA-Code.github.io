@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from 'react';
 import { site } from '@/content/site';
+import { shopify } from '@/content/shopify';
 import { prompts } from '@/content/prompts';
 import Reveal from '../Reveal';
 import Headline from '../Headline';
@@ -23,6 +24,11 @@ export default function PromptsGate({ onUnlock }: { onUnlock: () => void }) {
     setStatus('submitting');
 
     const formData = new FormData(event.currentTarget);
+    const dial = formData.get('whatsappDial');
+    const number = formData.get('whatsappNumber');
+    formData.set('whatsapp', `${dial} ${number}`.trim());
+    formData.delete('whatsappDial');
+    formData.delete('whatsappNumber');
     formData.set('origen', gate.origin);
 
     try {
@@ -120,6 +126,36 @@ export default function PromptsGate({ onUnlock }: { onUnlock: () => void }) {
                       placeholder={gate.fields.email.placeholder}
                       className={`${inputClasses} w-full`}
                     />
+                  </div>
+
+                  <div>
+                    <label htmlFor="prompts-whatsapp" className="block text-sm text-[#9A9A9E] mb-2">
+                      {gate.fields.whatsapp.label}
+                    </label>
+                    <div className="flex gap-2">
+                      <select
+                        id="prompts-whatsapp-dial"
+                        name="whatsappDial"
+                        defaultValue={shopify.intakeForm.countryCodes[0].dial}
+                        aria-label="Prefijo del país"
+                        className={`${inputClasses} dark-select w-24 md:w-28 shrink-0`}
+                      >
+                        {shopify.intakeForm.countryCodes.map((c) => (
+                          <option key={c.code} value={c.dial}>
+                            {c.code} {c.dial}
+                          </option>
+                        ))}
+                      </select>
+                      <input
+                        id="prompts-whatsapp"
+                        name="whatsappNumber"
+                        type="tel"
+                        required
+                        autoComplete="tel-national"
+                        placeholder={gate.fields.whatsapp.placeholder}
+                        className={`${inputClasses} flex-1 min-w-0`}
+                      />
+                    </div>
                   </div>
 
                   <button

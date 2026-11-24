@@ -17,7 +17,7 @@ export const prompts = {
     headline: ['8 prompts para crear', 'secciones de Shopify con IA.'],
     headlineItalicIndex: 1,
     subtitle:
-      'Los prompts que uso para diseñar secciones a medida, como el catálogo de Black Friday de Acuatoi. Déjame tu correo y los tienes al momento.',
+      'Los prompts que uso para diseñar secciones a medida, como el catálogo de Black Friday de Acuatoi. Déjame tu correo y tu WhatsApp y los tienes al momento.',
     benefits: [
       'Un prompt base para que la IA entienda tu marca y tu tema',
       '8 secciones listas para pedir: campaña tipo revista, reseñas, envío gratis, packs…',
@@ -26,6 +26,7 @@ export const prompts = {
     previewLabel: 'Esto es lo que vas a desbloquear',
     fields: {
       email: { label: 'Correo electrónico', placeholder: 'tucorreo@tutienda.com' },
+      whatsapp: { label: 'WhatsApp', placeholder: '600 000 000' },
     },
     submitLabel: 'Quiero los prompts',
     submittingLabel: 'Enviando…',

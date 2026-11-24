@@ -20,50 +20,6 @@ function ArrowIcon({ className = '', color = 'currentColor' }: { className?: str
   );
 }
 
-// Recreación ligera de la portada de la landing (no es una captura).
-function MagazineMock() {
-  const { mock } = shopify.aiDesign.example;
-  const tiles = ['#C8553D', '#2F6690', '#E0A458'];
-
-  return (
-    <div className="bg-[#F1EADC] text-[#1B1815] px-5 py-6 sm:px-8 sm:py-8">
-      <div className="flex items-center justify-between text-[9px] sm:text-[10px] tracking-[0.2em] border-b border-[#1B1815]/30 pb-2 mb-5">
-        <span>{mock.edition}</span>
-        <span>{mock.issue}</span>
-      </div>
-
-      <p className="font-display font-bold leading-[0.9] tracking-tight text-[42px] sm:text-[64px]">{mock.title}</p>
-      <p className="font-serif italic text-2xl sm:text-3xl mb-6 text-[#C8553D]">{mock.subtitle}</p>
-
-      <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-6">
-        {mock.featured.map((n, i) => (
-          <div key={n} className="relative aspect-[3/4] rounded-sm overflow-hidden" style={{ background: tiles[i] }}>
-            <span className="absolute top-1.5 left-2 text-[10px] font-medium text-[#F1EADC] tracking-widest">{n}</span>
-            <span
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 aspect-square rounded-full border-2 border-[#F1EADC]/70"
-              aria-hidden="true"
-            />
-          </div>
-        ))}
-      </div>
-
-      <div className="flex items-end justify-between gap-4">
-        <ul className="text-[11px] sm:text-xs space-y-1">
-          {mock.index.map((item) => (
-            <li key={item.page} className="flex gap-3">
-              <span className="text-[#1B1815]/50 tabular-nums">Pág. {item.page}</span>
-              <span>{item.name}</span>
-            </li>
-          ))}
-        </ul>
-        <span className="shrink-0 text-[10px] sm:text-[11px] border border-[#1B1815] rounded-full px-3 py-1.5">
-          {mock.cta}
-        </span>
-      </div>
-    </div>
-  );
-}
-
 export default function AiDesign() {
   const { aiDesign } = shopify;
   const { example, leadMagnet } = aiDesign;
@@ -132,13 +88,15 @@ export default function AiDesign() {
                   </span>
                   <ArrowIcon className="w-3.5 h-3.5 text-[#9A9A9E] group-hover:text-[#A6FF4D] transition-colors" />
                 </div>
-                {example.image ? (
-                  <div className="relative aspect-[4/5]">
-                    <Image src={example.image} alt={example.title} fill sizes="(min-width: 1024px) 560px, 100vw" className="object-cover object-top" />
-                  </div>
-                ) : (
-                  <MagazineMock />
-                )}
+                <div className="relative aspect-[4/5] bg-[#1E3FD8]">
+                  <Image
+                    src={example.image}
+                    alt={example.imageAlt}
+                    fill
+                    sizes="(min-width: 1024px) 560px, 100vw"
+                    className="object-cover object-top"
+                  />
+                </div>
               </a>
             </Reveal>
           </div>

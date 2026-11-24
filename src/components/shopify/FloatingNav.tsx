@@ -1,14 +1,15 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { shopify } from '@/content/shopify';
-import { HomeIcon, ProblemsIcon, SolutionsIcon, CalculatorIcon, FaqIcon } from './icons/NavIcons';
+import { HomeIcon, ProblemsIcon, SolutionsIcon, CalculatorIcon, AiSparkIcon, FaqIcon } from './icons/NavIcons';
 
 const icons = {
   inicio: HomeIcon,
   problemas: ProblemsIcon,
   soluciones: SolutionsIcon,
   calculadora: CalculatorIcon,
+  ia: AiSparkIcon,
   faq: FaqIcon,
 };
 
@@ -16,7 +17,19 @@ export default function FloatingNav() {
   const [pastHero, setPastHero] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
   const [active, setActive] = useState('inicio');
+  const navRef = useRef<HTMLElement>(null);
   const visible = pastHero && !footerVisible;
+
+  // En móvil el menú no cabe entero: desplazamos la barra para que
+  // la sección activa quede siempre a la vista.
+  useEffect(() => {
+    const nav = navRef.current;
+    if (!nav || nav.scrollWidth <= nav.clientWidth) return;
+    const item = nav.querySelector<HTMLElement>(`[data-key="${active}"]`);
+    if (!item) return;
+    const left = item.offsetLeft - (nav.clientWidth - item.offsetWidth) / 2;
+    nav.scrollTo({ left: Math.max(0, left), behavior: 'smooth' });
+  }, [active]);
 
   useEffect(() => {
     const hero = document.getElementById('inicio');
@@ -67,6 +80,7 @@ export default function FloatingNav() {
       aria-hidden={!visible}
     >
       <nav
+        ref={navRef}
         className="flex items-center gap-1 bg-[#141416]/95 backdrop-blur border border-[#2A2A2E] rounded-full px-1.5 py-1.5 shadow-xl shadow-black/50 max-w-full overflow-x-auto"
         aria-label="Navegación rápida"
       >
@@ -76,8 +90,9 @@ export default function FloatingNav() {
           return (
             <a
               key={item.key}
+              data-key={item.key}
               href={item.href}
-              className={`flex flex-col items-center gap-0.5 px-3.5 py-2 rounded-full text-[11px] whitespace-nowrap transition-colors shrink-0 ${
+              className={`flex flex-col items-center gap-0.5 px-2.5 sm:px-3.5 py-2 rounded-full text-[11px] whitespace-nowrap transition-colors shrink-0 ${
                 isActive
                   ? 'bg-[#1C1C1F] text-[#F5F5F3]'
                   : 'text-[#9A9A9E] hover:text-[#F5F5F3]'
@@ -90,7 +105,7 @@ export default function FloatingNav() {
         })}
         <a
           href={shopify.ctaHref}
-          className="ml-1 inline-flex items-center bg-[#A6FF4D] text-[#0B0B0C] text-sm font-medium px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity shrink-0"
+          className="ml-1 inline-flex items-center bg-[#A6FF4D] text-[#0B0B0C] text-sm font-medium px-4 sm:px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity shrink-0"
         >
           {shopify.ctaLabel}
         </a>

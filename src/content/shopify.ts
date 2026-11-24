@@ -27,6 +27,7 @@ export const shopify = {
     { key: 'problemas', label: 'Problemas', href: '#problemas' },
     { key: 'soluciones', label: 'Soluciones', href: '#soluciones' },
     { key: 'calculadora', label: 'Calculadora', href: '#calculadora' },
+    { key: 'ia', label: 'Diseño IA', href: '#ia' },
     { key: 'faq', label: "FAQ's", href: '#faq' },
   ],
 
@@ -220,23 +221,8 @@ export const shopify = {
       url: 'https://acuatoi.com/pages/black-friday',
       urlLabel: 'acuatoi.com/pages/black-friday',
       ctaLabel: 'Ver la página en directo',
-      // Si quieres usar una captura real en vez de la recreación,
-      // súbela a /public/images/shopify/ y pon aquí su ruta.
-      image: '',
-      mock: {
-        edition: 'EDICIÓN ESPECIAL',
-        issue: 'Nº 01 · NOVIEMBRE 2026',
-        title: 'BLACK FRIDAY',
-        subtitle: 'Catalog',
-        featured: ['03', '07', '10'],
-        index: [
-          { page: '02', name: 'Flotadores' },
-          { page: '03', name: 'Camisetas' },
-          { page: '04', name: 'Bolsas' },
-          { page: '05', name: 'Accesorios' },
-        ],
-        cta: 'Descubre el catálogo ↓',
-      },
+      image: '/images/shopify/acuatoi-black-friday.jpg',
+      imageAlt: 'Portada de la landing de Black Friday de Acuatoi: catálogo tipo revista con productos destacados y precios rebajados',
     },
     leadMagnet: {
       tag: 'GRATIS',
