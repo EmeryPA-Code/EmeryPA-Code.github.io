@@ -15,6 +15,7 @@ export const shopify = {
     { label: 'Cómo lo arreglo', href: '#soluciones' },
     { label: 'Calculadora', href: '#calculadora' },
     { label: 'Casos', href: '#casos' },
+    { label: 'Diseño con IA', href: '#ia' },
     { label: 'Método', href: '#metodo' },
     { label: 'FAQ', href: '#faq' },
   ],
@@ -198,6 +199,52 @@ export const shopify = {
         result: 'Lleva 3 meses online con inversión propia: ya está facturando y sigue en marcha.',
       },
     ],
+  },
+
+  aiDesign: {
+    tag: 'DISEÑO A MEDIDA CON IA',
+    headline: ['Secciones que no salen', 'de ninguna plantilla.'],
+    headlineItalicIndex: 1,
+    intro:
+      'Las plantillas enseñan tus ofertas como una cuadrícula más. Con IA diseño y programo secciones a medida para tu marca, en código nativo de Shopify, en días en lugar de semanas.',
+    points: [
+      'Secciones nativas: las editas tú desde el personalizador de Shopify, sin tocar código.',
+      'Pensadas para tu marca y tu campaña, no sacadas de un tema que ya usa todo el mundo.',
+      'Sin apps de pago ni scripts que ralenticen la tienda.',
+    ],
+    example: {
+      label: 'EJEMPLO REAL',
+      title: 'Black Friday de Acuatoi',
+      description:
+        'En vez de la típica cuadrícula de descuentos, convertí el Black Friday en un catálogo de revista: portada de edición especial, índice y páginas numeradas por categoría. Los mismos productos, pero se recorren como una revista.',
+      url: 'https://acuatoi.com/pages/black-friday',
+      urlLabel: 'acuatoi.com/pages/black-friday',
+      ctaLabel: 'Ver la página en directo',
+      // Si quieres usar una captura real en vez de la recreación,
+      // súbela a /public/images/shopify/ y pon aquí su ruta.
+      image: '',
+      mock: {
+        edition: 'EDICIÓN ESPECIAL',
+        issue: 'Nº 01 · NOVIEMBRE 2026',
+        title: 'BLACK FRIDAY',
+        subtitle: 'Catalog',
+        featured: ['03', '07', '10'],
+        index: [
+          { page: '02', name: 'Flotadores' },
+          { page: '03', name: 'Camisetas' },
+          { page: '04', name: 'Bolsas' },
+          { page: '05', name: 'Accesorios' },
+        ],
+        cta: 'Descubre el catálogo ↓',
+      },
+    },
+    leadMagnet: {
+      tag: 'GRATIS',
+      title: 'Te regalo los prompts que uso.',
+      text: '8 prompts para crear secciones de Shopify con IA, listos para copiar y pegar en ChatGPT o Claude.',
+      ctaLabel: 'Quiero los prompts',
+      href: '/shopify/prompts/',
+    },
   },
 
   methodology: {

@@ -7,6 +7,7 @@ import SolutionsSection from '@/components/shopify/SolutionsSection';
 import Calculator from '@/components/shopify/Calculator';
 import GuaranteeCard from '@/components/shopify/GuaranteeCard';
 import CaseStudies from '@/components/shopify/CaseStudies';
+import AiDesign from '@/components/shopify/AiDesign';
 import Methodology from '@/components/shopify/Methodology';
 import ComplementaryServices from '@/components/shopify/ComplementaryServices';
 import FaqAccordion from '@/components/shopify/FaqAccordion';
@@ -27,6 +28,7 @@ export default function ShopifyPage() {
         <Calculator />
         <GuaranteeCard />
         <CaseStudies />
+        <AiDesign />
         <Methodology />
         <ComplementaryServices />
         <FaqAccordion />
