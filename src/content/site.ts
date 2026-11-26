@@ -28,6 +28,7 @@ export const site = {
     { label: 'Proyectos', href: '#proyectos' },
     { label: 'Formación', href: '#formacion' },
     { label: 'Shopify', href: '/shopify/' },
+    { label: 'IA', href: '/ia/' },
     { label: 'Contacto', href: '#contacto' },
   ],
 
@@ -108,7 +109,7 @@ export const site = {
         description:
           'Automatizaciones, agentes e integraciones con LLMs que quitan trabajo repetitivo de en medio y dejan tiempo para lo que de verdad mueve la aguja.',
         tags: ['LLMs', 'Prompt engineering', 'n8n', 'RAG', 'Anthropic', 'OpenAI API'],
-        link: null as { label: string; href: string } | null,
+        link: { label: 'Webs y apps con IA: mira lo que hago →', href: '/ia/' } as { label: string; href: string } | null,
       },
     ],
     closing: 'Si tu proyecto necesita hablar los dos idiomas a la vez, probablemente sea buen momento para escribirme.',
